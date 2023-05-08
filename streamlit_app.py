@@ -39,7 +39,7 @@ except URLError as e:
     sl.error()
 
 sl.header("The fruit list contains:")
-def get_fruit_list():
+def get_fruit_load_list():
     with my_cnx.cursor() as my_cur:
          my_cur.execute("Select * from fruit_load_list")
          return my_cur.fetchall()
