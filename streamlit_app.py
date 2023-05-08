@@ -31,11 +31,11 @@ sl.header('Fruityvice Fruit Advice!')
 try:
   fruit_choice = sl.text_input('What fruit would you like information about?')
   if not fruit_choice:
-    sl.error('Please select a fruit to get information.')
-    else:
+        sl.error('Please select a fruit to get information.')
+  else:
     back_from_function = get_fruityvice_data(fruit_choice)
     sl.dataframe(back_from_function)
-except URLError as e:
+  except URLError as e:
   sl.error()
   
 my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
