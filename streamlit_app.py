@@ -41,12 +41,12 @@ except URLError as e:
 sl.header("The fruit list contains:")
 def get_fruit_list():
     with my_cnx.cursor() as my_cur:
-         my_cur.execute('Select *from fruit_load_list')
+         my_cur.execute("Select * from fruit_load_list")
          return my_cur.fetchall()
 if sl.button('Get Fruit Load List'):
-   my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
-   my_data_rows = get_fruit_load_list()
-   sl.dataframe(my_data_rows)
+    my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
+    my_data_rows = get_fruit_load_list()
+    sl.dataframe(my_data_rows)
 
 add_my_fruit = sl.text_input('What fruit would you like to add?', 'Jackfruit')
 sl.write('The user added',add_my_fruit)
