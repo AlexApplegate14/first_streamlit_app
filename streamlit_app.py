@@ -35,7 +35,7 @@ try:
   else:
     back_from_function = get_fruityvice_data(fruit_choice)
     sl.dataframe(back_from_function)
-  except URLError as e:
+ except URLError as e:
     sl.error()
   
 my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
